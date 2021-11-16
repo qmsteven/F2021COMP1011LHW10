@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -31,8 +32,10 @@ public class SearchViewController implements Initializable {
     private Label errMsgLabel;
 
     @FXML
-    void getSearchResults(ActionEvent event) {
-        initialMovieDataListView.getItems().addAll(APIUtility.getMoviesFromJSON().getSearch());
+    void getSearchResults(ActionEvent event) throws IOException, InterruptedException {
+        initialMovieDataListView.getItems().clear();
+        initialMovieDataListView.getItems().addAll(
+                APIUtility.getMoviesFromAPI(searchTextField.getText()).getSearch());
     }
 
     @Override

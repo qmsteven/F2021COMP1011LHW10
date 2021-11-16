@@ -41,7 +41,7 @@ public class APIUtility {
     /**
      * This method will call the OMDB API and return an OMDBResponse object
      */
-    public static OMDBResponse getMoviesFromApi(String searchText) throws IOException, InterruptedException {
+    public static OMDBResponse getMoviesFromAPI(String searchText) throws IOException, InterruptedException {
         OMDBResponse result = null;
 
         searchText = searchText.replace(" ", "%20");
@@ -59,6 +59,6 @@ public class APIUtility {
 
         //using our existing method to read the JSON and create a OMDBResponse object
         result = getMoviesFromJSON();
-        return null;
+        return result;
     }
 }
