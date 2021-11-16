@@ -1,6 +1,10 @@
 package com.example.f2021comp1011lhw10;
 
 import com.google.gson.annotations.SerializedName;
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class Movie {
     @SerializedName("Title")
@@ -56,5 +60,9 @@ public class Movie {
 
     public void setPoster(String poster) {
         this.poster = poster;
+    }
+
+    public String toString() {
+        return String.format("%s-%s", title, year);
     }
 }
